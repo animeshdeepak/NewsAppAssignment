@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/news_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_image"
+        tools:text="Google Pixel Phones Getting February 2021 Update With Security Patches." />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_title"
+        tools:text="Google Pixel Phones Getting February 2021 Update With Security Patches. Google Pixel Phones Getting February 2021 Update With Security Patches. Google Pixel Phones Getting February 2021 Update With Security Patches. Google Pixel Phones Getting February 2021 Update With Security Patches. Google Pixel Phones Getting February 2021 Update With Security Patches. Google Pixel Phones Getting February 2021 Update With Security Patches.\n \nGoogle Pixel Phones Getting February 2021 Update With Security Patches.Google Pixel Phones Getting February 2021 Update With Security Patches.Google Pixel Phones Getting February 2021 Update With Security Patches." />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_desc"
+        tools:text="Apple Podcasts, Google Products" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_published_at"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_source"
+        tools:text="Apple General" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_published_at"
+        tools:text="https://www.google.com" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
