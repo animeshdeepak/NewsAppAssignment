@@ -34,6 +34,7 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun handleBreakingNewsResponse(response: Response<NewsResponse>): Result<NewsResponse> {
+        _isLoading.postValue(false)
         if (response.isSuccessful) {
             response.body()?.let { resultResponse ->
                 return Result.Success(resultResponse)

@@ -45,7 +45,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun handleNewsResponse(response: Result<NewsResponse>) {
-        viewModel._isLoading.value = false
         when (response) {
             is Result.Success -> {
                 articlesAdapter.submitList(response.data?.articles)
