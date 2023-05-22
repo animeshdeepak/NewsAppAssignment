@@ -17,7 +17,7 @@
         android:theme="@style/Theme.NewsAppAssignment"
         tools:targetApi="31">
         <activity
-            android:name=".app.ui.HomeActivity"
+            android:name=".app.ui.home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

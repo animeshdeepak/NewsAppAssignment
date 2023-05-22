@@ -1,4 +1,4 @@
-package com.example.newsappassignment.app.ui
+package com.example.newsappassignment.app.ui.home
 
 import android.os.Bundle
 import android.util.Log
