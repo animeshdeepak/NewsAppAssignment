@@ -21,7 +21,7 @@ class HomeViewModel @Inject constructor(
     val breakingNewsResponse: LiveData<Result<NewsResponse>>
         get() = _breakingNewsResponse
 
-    val _isLoading = MutableLiveData<Boolean>()
+    private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean>
         get() = _isLoading
 
