@@ -1,6 +1,7 @@
 package com.example.newsappassignment.app.utils
 
 import android.content.Context
+import android.content.Intent
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
@@ -38,4 +39,8 @@ fun String?.changeDateFormat(): String {
     } catch (ex: Exception) {
         ""
     }
+}
+
+inline fun <reified T> Context.handleIntent(): Intent {
+    return Intent(this, T::class.java)
 }

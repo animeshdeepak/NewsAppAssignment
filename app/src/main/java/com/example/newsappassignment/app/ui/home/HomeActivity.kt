@@ -1,11 +1,10 @@
 package com.example.newsappassignment.app.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import com.example.newsappassignment.app.adapter.ArticlesAdapter
+import com.example.newsappassignment.app.base.BaseActivity
 import com.example.newsappassignment.app.utils.observe
 import com.example.newsappassignment.app.utils.showToast
 import com.example.newsappassignment.databinding.ActivityMainBinding
@@ -14,7 +13,7 @@ import com.example.newsappassignment.domain.utils.Result
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var articlesAdapter: ArticlesAdapter
@@ -28,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         initObserve()
     }
 
-    private fun initUI() {
+    override fun initUI() {
         articlesAdapter = ArticlesAdapter()
         articlesAdapter.onItemClick = {
             this.showToast(it)
@@ -39,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun initObserve() {
+    override fun initObserve() {
         observe(viewModel.breakingNewsResponse, ::handleNewsResponse)
         observe(viewModel.isLoading, ::handlerLoader)
     }
@@ -51,7 +50,7 @@ class HomeActivity : AppCompatActivity() {
             }
 
             is Result.Error -> {
-                Log.d("DPK", "Error: ${response.message}")
+                this.showToast("${response.message}")
             }
         }
     }
