@@ -5,5 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.NewsAppAssignment" parent="Base.Theme.NewsAppAssignment" />
+    <style name="Theme.NewsAppAssignment" parent="Base.Theme.NewsAppAssignment" >
+        <item name="android:windowBackground">@color/design_default_color_secondary</item>
+    </style>
 </resources>
