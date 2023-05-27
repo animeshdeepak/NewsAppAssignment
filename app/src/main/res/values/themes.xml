@@ -6,7 +6,7 @@
     </style>
 
     <style name="Theme.NewsAppAssignment" parent="Base.Theme.NewsAppAssignment">
-        <item name="android:windowBackground">@color/design_default_color_secondary</item>
+        <item name="android:windowBackground">@color/white</item>
     </style>
 
     <style name="Theme.TextViewButtonTheme" parent="android:Widget.TextView">
