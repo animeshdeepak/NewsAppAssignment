@@ -8,6 +8,9 @@
     <style name="Theme.NewsAppAssignment" parent="Base.Theme.NewsAppAssignment">
         <item name="android:windowBackground">@color/white</item>
         <item name="fontFamily">@font/libre_baskerville_regular</item>
+        <!-- below two lines make status bar gone -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="Theme.ButtonTheme" parent="android:Widget.Button">
