@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.example.newsappassignment.app.base.BaseFragment
 import com.example.newsappassignment.app.ui.onboarding.FirstIntroFragment
 import com.example.newsappassignment.app.ui.onboarding.SecondIntroFragment
 import com.example.newsappassignment.app.ui.onboarding.ThirdIntroFragment
 import com.example.newsappassignment.databinding.FragmentViewPagerBinding
 
-class ViewPagerFragment : Fragment() {
+class ViewPagerFragment : BaseFragment() {
     private lateinit var binding: FragmentViewPagerBinding
 
     override fun onCreateView(

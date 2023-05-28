@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.newsappassignment.R
-import com.example.newsappassignment.app.utils.navigateToNext
+import com.example.newsappassignment.app.base.BaseFragment
 import com.example.newsappassignment.databinding.FragmentFirstIntroBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FirstIntroFragment : Fragment() {
+class FirstIntroFragment : BaseFragment() {
     private lateinit var binding: FragmentFirstIntroBinding
 
     override fun onCreateView(
@@ -30,8 +29,13 @@ class FirstIntroFragment : Fragment() {
     }
 
     private fun initUI() {
-        binding.nextBtn.setOnClickListener {
-            activity?.findViewById<ViewPager2>(R.id.viewpager)?.currentItem = 1
+        binding.apply {
+            skipBtn.setOnClickListener {
+                moveToHome()
+            }
+            nextBtn.setOnClickListener {
+                activity?.findViewById<ViewPager2>(R.id.viewpager)?.currentItem = 1
+            }
         }
     }
 

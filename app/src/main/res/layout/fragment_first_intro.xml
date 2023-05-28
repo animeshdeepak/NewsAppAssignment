@@ -8,12 +8,64 @@
     tools:context=".app.ui.onboarding.FirstIntroFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/next_btn"
+        android:id="@+id/skip_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/skip"
+        android:textSize="@dimen/small_100_sp"
+        android:theme="@style/Theme.TextViewTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/onboarding_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/skip_btn"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="1"
+        app:srcCompat="@drawable/onboard_image_3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_100"
+        android:maxLines="2"
+        android:text="@string/lorem_ipsum_title"
+        android:theme="@style/Theme.TextViewTitleTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/onboarding_iv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/desc_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_100"
+        android:text="@string/lorem_ipsum_full"
+        android:textSize="@dimen/small_100_sp"
+        android:theme="@style/Theme.TextViewDescTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next_btn"
+        android:layout_width="@dimen/xl_300"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large_100"
+        android:background="@drawable/rounded_btn_bg"
         android:text="@string/next_btn"
-        android:theme="@style/Theme.TextViewButtonTheme"
+        android:textAllCaps="false"
+        android:textSize="@dimen/small_180_sp"
+        android:theme="@style/Theme.ButtonTheme"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

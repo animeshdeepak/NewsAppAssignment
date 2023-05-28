@@ -24,6 +24,17 @@
     <dimen name="large_200">64dp</dimen>
 
     <dimen name="xl_50">50dp</dimen>
+    <dimen name="xl_60">60dp</dimen>
     <dimen name="xl_100">100dp</dimen>
     <dimen name="xl_200">200dp</dimen>
+    <dimen name="xl_250">250dp</dimen>
+    <dimen name="xl_300">300dp</dimen>
+
+    <dimen name="small_100_sp">10sp</dimen>
+    <dimen name="small_110_sp">11sp</dimen>
+    <dimen name="small_120_sp">12sp</dimen>
+    <dimen name="small_140_sp">14sp</dimen>
+    <dimen name="small_160_sp">16sp</dimen>
+    <dimen name="small_180_sp">18sp</dimen>
+    <dimen name="small_240_sp">24sp</dimen>
 </resources>

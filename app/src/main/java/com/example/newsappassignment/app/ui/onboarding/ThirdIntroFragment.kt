@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.newsappassignment.R
-import com.example.newsappassignment.app.utils.navigateToNext
+import com.example.newsappassignment.app.base.BaseFragment
 import com.example.newsappassignment.databinding.FragmentThirdIntroBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ThirdIntroFragment : Fragment() {
+class ThirdIntroFragment : BaseFragment() {
     private lateinit var binding: FragmentThirdIntroBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,9 +26,13 @@ class ThirdIntroFragment : Fragment() {
     }
 
     private fun initUI() {
-        binding.finishBtn.setOnClickListener {
-            navigateToNext(R.id.action_global_homeActivity)
-            activity?.finish()
+        binding.apply {
+            skipBtn.setOnClickListener {
+                moveToHome()
+            }
+            finishBtn.setOnClickListener {
+                moveToHome()
+            }
         }
     }
 

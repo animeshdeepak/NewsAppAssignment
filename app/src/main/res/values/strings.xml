@@ -2,5 +2,9 @@
     <string name="app_name">Newz</string>
     <string name="by_deepak_saha">by: Deepak Saha</string>
     <string name="next_btn">Next</string>
+    <string name="skip">SKIP</string>
     <string name="finish">Finish</string>
+    <string name="lorem_ipsum_full">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="lorem_ipsum_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</string>
+    <string name="lorem_ipsum_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</string>
 </resources>
