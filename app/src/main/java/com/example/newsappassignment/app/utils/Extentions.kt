@@ -21,6 +21,14 @@ fun <R> FragmentActivity.observe(liveData: LiveData<R>, observer: (e: R) -> Unit
     }
 }
 
+fun <R> Fragment.observe(liveData: LiveData<R>, observer: (e: R) -> Unit) {
+    liveData.observe(
+        this
+    ) { value ->
+        value?.let { observer(it) }
+    }
+}
+
 fun Context.loadImage(imageView: ImageView, url: String?) {
     Glide.with(this)
         .load(url)
