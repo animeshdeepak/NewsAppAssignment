@@ -4,7 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/normal_125"
     tools:context=".app.ui.home.HomeFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/app_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/purple"
+        android:textSize="@dimen/small_160_sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.TextViewSmallDesc"
+        app:layout_constraintStart_toStartOf="@id/app_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/app_title_tv"
+        tools:text="Today, March 23rd" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/notification_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/notifications_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/trending_iv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/normal_100"
+        android:scaleType="fitXY"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_time_tv"
+        app:shapeAppearanceOverlay="@style/Theme.RoundedImageView"
+        tools:src="@drawable/onboard_image_1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/trending_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_100"
+        android:maxLines="2"
+        android:text="@string/lorem_ipsum_title"
+        android:theme="@style/Theme.TextViewTitleTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trending_iv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/trending_author_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_100"
+        android:text="@string/author"
+        android:theme="@style/Theme.TextViewSmallDesc"
+        app:layout_constraintStart_toStartOf="@id/trending_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/trending_title_tv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/trending_author_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_100"
+        android:theme="@style/Theme.TextViewSmallDesc"
+        app:layout_constraintBottom_toBottomOf="@id/trending_author_tv"
+        app:layout_constraintStart_toEndOf="@id/trending_author_tv"
+        app:layout_constraintTop_toTopOf="@id/trending_author_tv"
+        tools:text="Author Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/trending_source_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/source"
+        android:theme="@style/Theme.TextViewSmallDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trending_author_tv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/trending_source_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_100"
+        android:theme="@style/Theme.TextViewSmallDesc"
+        app:layout_constraintBottom_toBottomOf="@id/trending_source_tv"
+        app:layout_constraintStart_toEndOf="@id/trending_source_tv"
+        app:layout_constraintTop_toTopOf="@id/trending_source_tv"
+        tools:text="Source Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/trending_time_stamp_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_100"
+        android:drawableStart="@drawable/time_icon"
+        android:drawablePadding="@dimen/small_50"
+        android:theme="@style/Theme.TextViewSmallDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trending_title_tv"
+        tools:text="1h ago" />
 
     <ProgressBar
         android:id="@+id/progress_bar"

@@ -36,4 +36,15 @@
         <item name="android:textSize">@dimen/small_100_sp</item>
         <item name="fontFamily">@font/libre_baskerville_regular</item>
     </style>
+
+    <style name="Theme.TextViewSmallDesc" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/light_grey</item>
+        <item name="android:textSize">@dimen/small_120_sp</item>
+    </style>
+
+    <style name="Theme.RoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/normal_100</item>
+        <item name="color">@color/white</item>
+    </style>
 </resources>
