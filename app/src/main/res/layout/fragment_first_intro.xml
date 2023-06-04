@@ -49,7 +49,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/normal_100"
         android:text="@string/lorem_ipsum_full"
-        android:textSize="@dimen/small_100_sp"
         android:theme="@style/Theme.TextViewDescTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

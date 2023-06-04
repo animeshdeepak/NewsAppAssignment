@@ -16,4 +16,6 @@
     <string name="not_avail">NA</string>
     <string name="author">Author:</string>
     <string name="source">Source:</string>
+    <string name="following">Following</string>
+    <string name="view_more">View more</string>
 </resources>
