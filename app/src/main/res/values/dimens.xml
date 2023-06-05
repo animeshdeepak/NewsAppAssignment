@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="no_size">0dp</dimen>
     <!-- small dimen -->
     <dimen name="small_50">4dp</dimen>
     <dimen name="small_100">8dp</dimen>

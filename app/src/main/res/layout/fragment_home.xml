@@ -141,6 +141,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/trending_source_tv" />
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/category_tl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_200"
+        android:layout_marginTop="@dimen/small_150"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/following_tv"
+        app:tabGravity="center"
+        app:tabIndicator="@drawable/rounded_tab_bg"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorGravity="stretch"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="@dimen/small_100"
+        app:tabPaddingStart="@dimen/small_100"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/grey" />
+
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"

@@ -17,6 +17,7 @@ import com.example.newsappassignment.databinding.FragmentHomeBinding
 import com.example.newsappassignment.domain.model.Articles
 import com.example.newsappassignment.domain.model.NewsResponse
 import com.example.newsappassignment.domain.utils.Result
+import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,6 +40,27 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun initUI() {
+        setUpCategoryTabLayout()
+    }
+
+    private fun setUpCategoryTabLayout() {
+        binding.categoryTl.apply {
+            addTab(newTab().setText("All"))
+            addTab(newTab().setText("Business"))
+            addTab(newTab().setText("Crypto"))
+            addTab(newTab().setText("Gaming"))
+            addTab(newTab().setText("Technology"))
+
+            addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+                    activity?.showToast(tab?.text.toString())
+                }
+
+                override fun onTabUnselected(tab: TabLayout.Tab?) = Unit
+
+                override fun onTabReselected(tab: TabLayout.Tab?) = Unit
+            })
+        }
 
     }
 
