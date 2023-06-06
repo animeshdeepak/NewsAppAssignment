@@ -111,5 +111,8 @@ dependencies {
     // viewpager dot indicator
     def dot_indicator = "5.0"
     implementation "com.tbuonomo:dotsindicator:$dot_indicator"
+
+    def data_store = "1.0.0"
+    implementation "androidx.datastore:datastore-preferences:$data_store"
 }
 
