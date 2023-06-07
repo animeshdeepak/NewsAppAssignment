@@ -28,6 +28,7 @@
     <dimen name="xl_50">50dp</dimen>
     <dimen name="xl_60">60dp</dimen>
     <dimen name="xl_100">100dp</dimen>
+    <dimen name="xl_150">150dp</dimen>
     <dimen name="xl_200">200dp</dimen>
     <dimen name="xl_250">250dp</dimen>
     <dimen name="xl_300">300dp</dimen>

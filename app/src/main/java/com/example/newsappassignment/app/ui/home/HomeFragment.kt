@@ -11,6 +11,7 @@ import com.example.newsappassignment.app.base.BaseFragment
 import com.example.newsappassignment.app.utils.currentTime
 import com.example.newsappassignment.app.utils.hourAgoFormat
 import com.example.newsappassignment.app.utils.loadImage
+import com.example.newsappassignment.app.utils.navigateToNext
 import com.example.newsappassignment.app.utils.observe
 import com.example.newsappassignment.app.utils.showToast
 import com.example.newsappassignment.databinding.FragmentHomeBinding
@@ -41,6 +42,9 @@ class HomeFragment : BaseFragment() {
 
     private fun initUI() {
         setUpCategoryTabLayout()
+        binding.viewMoreTv.setOnClickListener {
+            navigateToNext(R.id.action_homeFragment_to_topicsFragment)
+        }
     }
 
     private fun setUpCategoryTabLayout() {
@@ -101,15 +105,5 @@ class HomeFragment : BaseFragment() {
             dateTimeTv.text = "Today, ${currentTime()}"
         }
 
-    }
-
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-//                    putString(ARG_PARAM1, param1)
-//                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

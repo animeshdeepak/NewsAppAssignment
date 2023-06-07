@@ -45,6 +45,10 @@ fun Fragment.navigateToNext(actionId: Int) {
     findNavController().navigate(actionId)
 }
 
+fun Fragment.pop() {
+    findNavController().popBackStack()
+}
+
 inline fun <reified T> Activity.moveToActivity() {
     val intent = Intent(this, T::class.java)
     startActivity(intent)

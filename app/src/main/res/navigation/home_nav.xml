@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.newsappassignment.app.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_topicsFragment"
+            app:destination="@id/topicsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.example.newsappassignment.app.ui.explore.ExploreFragment"
@@ -25,4 +29,9 @@
         android:name="com.example.newsappassignment.app.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/topicsFragment"
+        android:name="com.example.newsappassignment.app.ui.topics.TopicsFragment"
+        android:label="fragment_topics"
+        tools:layout="@layout/fragment_topics" />
 </navigation>
