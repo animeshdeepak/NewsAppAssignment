@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import com.example.newsappassignment.app.ui.home.HomeViewModel
 import com.example.newsappassignment.app.ui.topics.model.TopicDataModel
 import com.example.newsappassignment.app.utils.pop
+import com.example.newsappassignment.app.utils.showToast
 import com.example.newsappassignment.databinding.FragmentTopicsBinding
 import com.example.newsappassignment.domain.model.getFakeTopicsList
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,6 +47,7 @@ class TopicsFragment : Fragment() {
         topicsAdapter = TopicsAdapter()
         topicsAdapter.onItemClick = { model ->
             topicsList.add(model)
+            context?.showToast(model.name)
         }
 
         binding.topicsRv.apply {

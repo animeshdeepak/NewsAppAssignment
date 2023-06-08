@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/card_gradient_bg"
     android:padding="@dimen/normal_100"
     tools:context=".app.ui.topics.TopicsFragment">
 
@@ -16,15 +17,16 @@
         android:text="@string/done"
         android:textColor="@color/purple"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/topics_rv"
+        app:layout_constraintBottom_toBottomOf="@id/topics_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/topics_tv" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/topics_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/topics"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +34,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/topics_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/normal_100"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
