@@ -28,6 +28,7 @@ class TopicsAdapter : ListAdapter<TopicDataModel, TopicsAdapter.TopicsViewHolder
                 topicTv.text = model.name
                 topicCv.setOnClickListener {
                     onItemClick?.invoke(model)
+                    topicCv.isChecked = !topicCv.isChecked // add checkbox to cards
                 }
             }
         }

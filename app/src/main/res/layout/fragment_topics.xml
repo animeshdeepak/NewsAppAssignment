@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/card_gradient_bg"
     android:padding="@dimen/normal_100"
     tools:context=".app.ui.topics.TopicsFragment">
 
