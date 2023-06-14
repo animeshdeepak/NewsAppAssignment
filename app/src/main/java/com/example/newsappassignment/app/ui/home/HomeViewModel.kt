@@ -21,16 +21,14 @@ class HomeViewModel @Inject constructor(
     val breakingNewsResponse: LiveData<Result<NewsResponse>>
         get() = _breakingNewsResponse
 
-    init {
+    fun getBreakingNews() {
         viewModelScope.launch(Dispatchers.IO) {
-            _isLoading.postValue(true)
             val response = newsRepo.getBreakingNews(1)
             _breakingNewsResponse.postValue(handleBreakingNewsResponse(response))
         }
     }
 
     private fun handleBreakingNewsResponse(response: Response<NewsResponse>): Result<NewsResponse> {
-        _isLoading.postValue(false)
         if (response.isSuccessful) {
             response.body()?.let { resultResponse ->
                 return Result.Success(resultResponse)

@@ -20,4 +20,5 @@
     <string name="view_more">View more</string>
     <string name="done">Done</string>
     <string name="topics">TOPICS</string>
+    <string name="today_date">Today, %1$s</string>
 </resources>

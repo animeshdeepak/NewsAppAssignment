@@ -3,6 +3,7 @@ package com.example.newsappassignment.app.utils
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -52,4 +53,42 @@ fun Fragment.pop() {
 inline fun <reified T> Activity.moveToActivity() {
     val intent = Intent(this, T::class.java)
     startActivity(intent)
+}
+
+/**
+ * Show the view  (visibility = View.VISIBLE)
+ */
+fun View.show(): View {
+    if (visibility != View.VISIBLE)
+        visibility = View.VISIBLE
+    return this
+}
+
+/**
+ * Show the view if [predicate] returns true
+ * (visibility = View.VISIBLE)
+ */
+inline fun View.showIf(predicate: () -> Boolean): View {
+    if (visibility != View.VISIBLE && predicate())
+        visibility = View.VISIBLE
+    return this
+}
+
+/**
+ * Remove the view (visibility = View.GONE)
+ */
+fun View.gone(): View {
+    if (visibility != View.GONE)
+        visibility = View.GONE
+    return this
+}
+
+/**
+ * Remove the view if [predicate] returns true
+ * (visibility = View.GONE)
+ */
+inline fun View.hideIf(predicate: () -> Boolean): View {
+    if (visibility != View.GONE && predicate())
+        visibility = View.GONE
+    return this
 }

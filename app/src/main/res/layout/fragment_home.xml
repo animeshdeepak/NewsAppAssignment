@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/normal_100"
     tools:context=".app.ui.home.HomeFragment">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/normal_100"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        shimmer:duration="800">
+
+        <include
+            layout="@layout/fragment_home_shimmer"
+            tools:visibility="gone" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/app_title_tv"
@@ -54,11 +74,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/normal_100"
         android:maxLines="2"
-        android:text="@string/lorem_ipsum_title"
         android:theme="@style/Theme.TextViewTitleTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/trending_iv" />
+        app:layout_constraintTop_toBottomOf="@id/trending_iv"
+        tools:text="@string/lorem_ipsum_title" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/trending_author_tv"
@@ -161,6 +181,13 @@
         app:tabRippleColor="@android:color/transparent"
         app:tabSelectedTextColor="@color/white"
         app:tabTextColor="@color/grey" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="trending_iv,trending_title_tv,trending_author_tv,trending_author_name_tv,trending_source_tv,trending_source_name_tv,trending_time_stamp_tv,following_tv,view_more_tv,category_tl"
+        tools:visibility="visible" />
 
     <ProgressBar
         android:id="@+id/progress_bar"

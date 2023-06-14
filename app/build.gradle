@@ -114,5 +114,8 @@ dependencies {
 
     def data_store = "1.0.0"
     implementation "androidx.datastore:datastore-preferences:$data_store"
+
+    // face shimmer effect as loader
+    implementation "com.facebook.shimmer:shimmer:0.1.0@aar"
 }
 

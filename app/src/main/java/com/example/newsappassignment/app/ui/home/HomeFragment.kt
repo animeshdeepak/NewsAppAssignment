@@ -9,10 +9,12 @@ import androidx.fragment.app.viewModels
 import com.example.newsappassignment.R
 import com.example.newsappassignment.app.base.BaseFragment
 import com.example.newsappassignment.app.utils.currentTime
+import com.example.newsappassignment.app.utils.gone
 import com.example.newsappassignment.app.utils.hourAgoFormat
 import com.example.newsappassignment.app.utils.loadImage
 import com.example.newsappassignment.app.utils.navigateToNext
 import com.example.newsappassignment.app.utils.observe
+import com.example.newsappassignment.app.utils.show
 import com.example.newsappassignment.app.utils.showToast
 import com.example.newsappassignment.databinding.FragmentHomeBinding
 import com.example.newsappassignment.domain.model.Articles
@@ -41,9 +43,27 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun initUI() {
+        binding.dateTimeTv.text = getString(R.string.today_date, currentTime())
+        handleShimmerAnimation(isStart = true)
+        viewModel.getBreakingNews()
         setUpCategoryTabLayout()
         binding.viewMoreTv.setOnClickListener {
             navigateToNext(R.id.action_homeFragment_to_topicsFragment)
+        }
+    }
+
+    private fun handleShimmerAnimation(isStart: Boolean) {
+        binding.apply {
+            if (isStart) {
+                group1.gone()
+                shimmerViewContainer.startShimmerAnimation()
+            } else {
+                shimmerViewContainer.apply {
+                    stopShimmerAnimation()
+                    gone()
+                }
+                group1.show()
+            }
         }
     }
 
@@ -81,6 +101,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun handleNewsResponse(response: Result<NewsResponse>) {
+        handleShimmerAnimation(isStart = false)
         when (response) {
             is Result.Success -> {
                 updateTrending(response.data?.articles?.get(0))
@@ -102,7 +123,6 @@ class HomeFragment : BaseFragment() {
             trendingAuthorNameTv.text = trendingArticles.author ?: getString(R.string.not_avail)
             trendingTitleTv.text = trendingArticles.title ?: getString(R.string.not_avail)
             trendingTimeStampTv.text = trendingArticles.publishedAt.hourAgoFormat()
-            dateTimeTv.text = "Today, ${currentTime()}"
         }
 
     }
