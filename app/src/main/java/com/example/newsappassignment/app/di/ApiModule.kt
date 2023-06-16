@@ -1,7 +1,7 @@
 package com.example.newsappassignment.app.di
 
+import com.example.newsappassignment.BuildConfig
 import com.example.newsappassignment.data.remote.NewsApi
-import com.example.newsappassignment.domain.utils.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,7 +33,7 @@ object ApiModule {
     @Singleton
     fun provideRetrofit(client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

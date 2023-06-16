@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -20,9 +21,33 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    def envConfig
+    flavorDimensions 'default'
+    productFlavors {
+        free {
+            dimension 'default'
+            versionNameSuffix "-free"
+            applicationIdSuffix ".free"
+            envConfig = getProps("./config/free.properties")
+            buildConfigField 'String', 'BASE_URL', '\"'+envConfig.getProperty("BASE_URL")+'\"'
+        }
+        paid {
+            dimension 'default'
+            versionNameSuffix "-paid"
+            applicationIdSuffix ".paid"
+            envConfig = getProps("./config/paid.properties")
+            buildConfigField 'String', 'BASE_URL', '\"'+envConfig.getProperty("BASE_URL")+'\"'
+        }
+    }
+
     buildTypes {
+        debug {
+            debuggable true
+            applicationIdSuffix ".debug"
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -35,6 +60,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig = true
     }
 }
 
