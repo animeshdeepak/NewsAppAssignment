@@ -14,9 +14,10 @@ Tech stacks used:
 6. DataStore - replacement of SharedPref to store key value pairs data locally in device.
 7. Jetpack Navigation - helps you implement navigation.
 8. Retrofit - type-safe REST client, easier to consume RESTful web services.
-9. Facebook Shimmer sdk - replacement of progress bar.
-10. ViewPager 2 - slide between Fragments.
-11. Constraint Layout - lets you create large, complex layouts with a flat view hierarchy.
-12. Bottom Navigation View
-13. Tab Layout
-14. Build Type (debug/release) + Product Flavours (free/paid)
+9. Recycler View - ViewGroup that implement horizontal, vertical and Expandable List.
+10. Facebook Shimmer sdk - replacement of progress bar.
+11. ViewPager 2 - slide between Fragments.
+12. Constraint Layout - lets you create large, complex layouts with a flat view hierarchy.
+13. Bottom Navigation View
+14. Tab Layout
+15. Build Type (debug/release) + Product Flavours (free/paid)
