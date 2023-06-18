@@ -19,3 +19,4 @@ Tech stacks used:
 11. Constraint Layout - lets you create large, complex layouts with a flat view hierarchy.
 12. Bottom Navigation View
 13. Tab Layout
+14. Build Type (debug/release) + Product Flavours (free/paid)
