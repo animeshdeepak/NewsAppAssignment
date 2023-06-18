@@ -1,7 +1,8 @@
 # NewsApp
 ![alt text](https://miro.medium.com/v2/resize:fit:1400/1*BqFy9rd2_hCtOeHgUY72gg.png)
 
-Sample project to showcase my android coding skills
+Sample project to showcase my android coding skills.
+
 Tech stacks used:
 1. Kotlin - Programming Language
 2. MVVM - Android recommended arch. to seperate Business Logic from UI.
