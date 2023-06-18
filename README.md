@@ -3,7 +3,7 @@
 
 Sample project to showcase my android coding skills
 Tech stacks used:
-1. Kotlin - Android PL
+1. Kotlin - Programming Language
 2. MVVM - Android recommended arch. to seperate Business Logic from UI.
 3. Clean Code - guidelines adhered to build scalable, testable, and maintainable software.
 4. Coroutine - recommended solution for Asynchronous Programming on Android.
@@ -13,6 +13,6 @@ Tech stacks used:
 8. Retrofit - type-safe REST client, easier to consume RESTful web services.
 9. Facebook Shimmer sdk - replacement of progress bar.
 10. ViewPager 2 - slide between Fragments.
-11. Bottom Navigation View
-12. Tab Layout
-13. Constrain Layout
+11. Constraint Layout - lets you create large, complex layouts with a flat view hierarchy.
+12. Bottom Navigation View
+13. Tab Layout
