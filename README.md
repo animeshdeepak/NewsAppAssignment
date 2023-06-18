@@ -1,6 +1,8 @@
 # NewsApp
 ![alt text](https://miro.medium.com/v2/resize:fit:1400/1*BqFy9rd2_hCtOeHgUY72gg.png)
 
+![alt text](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+
 Sample project to showcase my android coding skills.
 
 Tech stacks used:
