@@ -28,7 +28,7 @@ class ParametrizedChangeDateFormatTest(
 
     companion object {
         @JvmStatic
-        @Parameters
+        @Parameters(name = "{index}: Is {0} and {1} datetime are same?. {2}")
         fun data(): List<Array<Any>> {
             return listOf(
                 arrayOf("dd.MM.yyyy HH:mm:ss", "2023-06-22T17:56:03Z", true),
