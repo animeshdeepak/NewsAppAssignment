@@ -21,7 +21,10 @@ class DateManagerKtTest {
         println("After Every Test Case")
     }
 
-    @Test
+    /**
+     * Moved these below test code to ParametrizedChangeDateFormatTest.kt file
+     */
+    /*    @Test
     fun changeDateFormat_positive() {
         // Arrange
         val publishedAt = "2023-06-22T17:56:03Z"
@@ -43,7 +46,7 @@ class DateManagerKtTest {
         }
         // Assert
         assertEquals(false, res)
-    }
+    }*/
 
     @Test
     fun changeDateFormat_input_blank_negative_case() {
@@ -91,21 +94,5 @@ class DateManagerKtTest {
         }
         // Assert
         assertEquals(true, res)
-    }
-
-    private fun isValidFormat(format: String?, value: String): Boolean {
-        var date: Date? = null
-        try {
-            val sdf = SimpleDateFormat(format)
-            date = sdf.parse(value)
-            date?.let {
-                if (value != sdf.format(it)) {
-                    date = null
-                }
-            }
-        } catch (ex: ParseException) {
-//            ex.printStackTrace()
-        }
-        return date != null
     }
 }
