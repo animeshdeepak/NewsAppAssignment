@@ -14,11 +14,6 @@ class NewsRepoImpl @Inject constructor(
     appContext: Application
 ) : INewsRepo {
 
-    init {
-        val appName = appContext.getString(R.string.app_name)
-        Log.d("DPK", "app_name: $appName")
-    }
-
     override suspend fun searchForNews(
         searchQuery: String,
         pageNumber: Int,
