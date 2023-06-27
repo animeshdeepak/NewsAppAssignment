@@ -19,7 +19,7 @@ import com.example.newsappassignment.app.utils.showToast
 import com.example.newsappassignment.databinding.FragmentHomeBinding
 import com.example.newsappassignment.domain.model.Articles
 import com.example.newsappassignment.domain.model.NewsResponse
-import com.example.newsappassignment.domain.utils.Result
+import com.example.newsappassignment.domain.utils.ApiResult
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -100,14 +100,14 @@ class HomeFragment : BaseFragment() {
             binding.progressBar.visibility = View.GONE
     }
 
-    private fun handleNewsResponse(response: Result<NewsResponse>) {
+    private fun handleNewsResponse(response: ApiResult<NewsResponse>) {
         handleShimmerAnimation(isStart = false)
         when (response) {
-            is Result.Success -> {
+            is ApiResult.Success -> {
                 updateTrending(response.data?.articles?.get(0))
             }
 
-            is Result.Error -> {
+            is ApiResult.Error -> {
                 activity?.showToast("${response.message}")
             }
         }

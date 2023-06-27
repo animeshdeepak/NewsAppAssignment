@@ -11,7 +11,7 @@ import com.example.newsappassignment.app.utils.observe
 import com.example.newsappassignment.app.utils.showToast
 import com.example.newsappassignment.databinding.FragmentExploreBinding
 import com.example.newsappassignment.domain.model.NewsResponse
-import com.example.newsappassignment.domain.utils.Result
+import com.example.newsappassignment.domain.utils.ApiResult
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -51,13 +51,13 @@ class ExploreFragment : BaseFragment() {
         observe(viewModel.isLoading, ::handlerLoader)
     }
 
-    private fun handleNewsResponse(response: Result<NewsResponse>) {
+    private fun handleNewsResponse(response: ApiResult<NewsResponse>) {
         when (response) {
-            is Result.Success -> {
+            is ApiResult.Success -> {
                 articlesAdapter.submitList(response.data?.articles)
             }
 
-            is Result.Error -> {
+            is ApiResult.Error -> {
                 activity?.showToast("${response.message}")
             }
         }

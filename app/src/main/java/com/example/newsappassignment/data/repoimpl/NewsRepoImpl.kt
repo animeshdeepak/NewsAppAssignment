@@ -1,29 +1,37 @@
 package com.example.newsappassignment.data.repoimpl
 
-import android.app.Application
-import android.util.Log
-import com.example.newsappassignment.R
 import com.example.newsappassignment.data.remote.NewsApi
 import com.example.newsappassignment.domain.model.NewsResponse
 import com.example.newsappassignment.domain.repo.INewsRepo
-import retrofit2.Response
+import com.example.newsappassignment.domain.utils.ApiResult
 import javax.inject.Inject
 
 class NewsRepoImpl @Inject constructor(
     private val newsApi: NewsApi,
-    appContext: Application
 ) : INewsRepo {
 
     override suspend fun searchForNews(
         searchQuery: String,
         pageNumber: Int,
-    ): Response<NewsResponse> {
-        return newsApi.searchForNews(searchQuery = searchQuery, pageNumber = pageNumber)
+    ): ApiResult<NewsResponse> {
+        val response = newsApi.searchForNews(searchQuery = searchQuery, pageNumber = pageNumber)
+        if (response.isSuccessful) {
+            response.body()?.let { resultResponse ->
+                return ApiResult.Success(resultResponse)
+            }
+        }
+        return ApiResult.Error(response.message())
     }
 
     override suspend fun getBreakingNews(
         pageNumber: Int,
-    ): Response<NewsResponse> {
-        return newsApi.getBreakingNews(pageNumber = pageNumber)
+    ): ApiResult<NewsResponse> {
+        val response = newsApi.getBreakingNews(pageNumber = pageNumber)
+        if (response.isSuccessful) {
+            response.body()?.let { resultResponse ->
+                return ApiResult.Success(resultResponse)
+            }
+        }
+        return ApiResult.Error(response.message())
     }
 }

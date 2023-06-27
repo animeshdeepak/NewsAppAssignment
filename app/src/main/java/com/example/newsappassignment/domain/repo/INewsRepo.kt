@@ -1,15 +1,15 @@
 package com.example.newsappassignment.domain.repo
 
 import com.example.newsappassignment.domain.model.NewsResponse
-import retrofit2.Response
+import com.example.newsappassignment.domain.utils.ApiResult
 
 interface INewsRepo {
     suspend fun searchForNews(
         searchQuery: String,
         pageNumber: Int,
-    ): Response<NewsResponse>
+    ): ApiResult<NewsResponse>
 
     suspend fun getBreakingNews(
         pageNumber: Int,
-    ): Response<NewsResponse>
+    ): ApiResult<NewsResponse>
 }
